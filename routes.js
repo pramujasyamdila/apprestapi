@@ -23,4 +23,7 @@ module.exports = function (app) {
     // API menghapus data ke database
     app.route('/mahasiswa')
         .delete(jsonku.hapusMahasiswa);
+
+    app.route('/tampilkecamatan')
+        .get(jsonku.tampilgroupkecamatan);
 }

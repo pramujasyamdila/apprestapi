@@ -86,3 +86,19 @@ exports.hapusMahasiswa = function (req, res) {
             }
         });
 };
+
+
+//menampilkan kecamatan grop
+
+exports.tampilgroupkecamatan = function (req, res) {
+
+    connection.query('SELECT mahasiswa.id_mahasiswa,mahasiswa.nim,mahasiswa.nama,mahasiswa.jurusan,kecamatan.nama_kecamatan FROM formpendaftaran JOIN kecamatan JOIN mahasiswa WHERE formpendaftaran.id_kecamatan=kecamatan.id_kecamatan AND formpendaftaran.id_mahasiswa=mahasiswa.id_mahasiswa ORDER BY mahasiswa.id_mahasiswa',
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.oknested(rows, res);
+            }
+        });
+};
