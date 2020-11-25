@@ -9,12 +9,15 @@ module.exports = function (app) {
         .get(jsonku.index);
 
     // menampilkan  semua daata di database
-    app.route('/tampil')
+    app.route('/mahasiswa')
         .get(jsonku.tampilmahasiswa);
     // menampilkan daata di database berdasarkan Id
-    app.route('/tampil/:id')
+    app.route('/mahasiswa/:id')
         .get(jsonku.tampilId);
     // menambah data ke database
-    app.route('/tambah')
+    app.route('/mahasiswa')
         .post(jsonku.tambahMahasiswa);
+    // mengubah data ke database
+    app.route('/mahasiswa')
+        .put(jsonku.ubahMahasiswa);
 }
