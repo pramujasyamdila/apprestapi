@@ -8,16 +8,19 @@ module.exports = function (app) {
     app.route('/')
         .get(jsonku.index);
 
-    // menampilkan  semua daata di database
+    // API menampilkan  semua daata di database
     app.route('/mahasiswa')
         .get(jsonku.tampilmahasiswa);
-    // menampilkan daata di database berdasarkan Id
+    // API menampilkan daata di database berdasarkan Id
     app.route('/mahasiswa/:id')
         .get(jsonku.tampilId);
-    // menambah data ke database
+    // API menambah data ke database
     app.route('/mahasiswa')
         .post(jsonku.tambahMahasiswa);
-    // mengubah data ke database
+    // API mengubah data ke database
     app.route('/mahasiswa')
         .put(jsonku.ubahMahasiswa);
+    // API menghapus data ke database
+    app.route('/mahasiswa')
+        .delete(jsonku.hapusMahasiswa);
 }
